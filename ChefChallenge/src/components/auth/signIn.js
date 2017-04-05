@@ -23,7 +23,7 @@ module.exports = React.createClass({
     firebaseApp.auth().onAuthStateChanged(user => {
       if (user) {
         console.log('user', user);
-        this.props.navigator.push({name: 'topics'});
+        this.props.navigator.push({name: 'LandingMenu'});
         // navigate to our main application page.
       }
     })

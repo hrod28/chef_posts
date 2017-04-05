@@ -3,6 +3,8 @@ import {
   Navigator
 } from 'react-native';
 
+
+import LandingMenu from './components/LandingMenu';
 import signIn from './components/auth/signIn';
 import signUp from './components/auth/signUp';
 import chooseName from './components/auth/chooseName';
@@ -17,7 +19,8 @@ const routes = {
   chooseName,
   forgotPassword,
   topics,
-  topicDetail
+  topicDetail,
+  LandingMenu
 }
 
 module.exports = React.createClass({

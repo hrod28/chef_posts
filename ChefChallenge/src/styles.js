@@ -30,6 +30,15 @@ module.exports = StyleSheet.create({
     borderRadius: 5,
     margin: 2
   },
+  headerContainer: {
+    backgroundColor: white,
+    justifyContent: 'center',
+    height: 50,
+    borderColor: black,
+    borderWidth: 1,
+    borderRadius: 5,
+    margin: 2
+  },
   button: {
     textAlign: 'center'
   },
