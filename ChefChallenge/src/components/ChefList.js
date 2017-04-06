@@ -13,6 +13,7 @@ import {
 import axios from 'axios';
 import { Card, CardSection, Input, Button, Spinner, Header } from './common';
 import ChefDetail from './ChefDetail';
+import styles from '../styles';
 
 class ChefList extends Component {
   state = { chefs: [] };
@@ -33,9 +34,25 @@ class ChefList extends Component {
     console.log(this.state);
 
     return (
+
+      <Card>
+
+        <View>
+          <Header headerText="Participating Chefs" />
+          <TouchableOpacity
+            onPress={() => this.props.navigator.push({name: 'LandingMenu'})}
+          >
+            <Text style={styles.link}>
+              Back
+            </Text>
+          </TouchableOpacity>
+        </View>
+
       <ScrollView>
         {this.renderChefs()}
       </ScrollView>
+
+      </Card>
 
     );
   }
