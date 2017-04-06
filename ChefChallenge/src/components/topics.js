@@ -10,6 +10,7 @@ import {
 
 import styles from '../styles';
 import {firebaseApp, topicsRef} from './auth/authentication';
+import { Card, CardSection, Input, Button, Spinner, Header } from './common';
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 module.exports = React.createClass({
@@ -103,6 +104,17 @@ module.exports = React.createClass({
   render() {
     return (
       <View style={styles.flexContainer}>
+      <View>
+        <Header headerText="Post or Comment" />
+        <TouchableOpacity
+          onPress={() => this.props.navigator.pop()}
+        >
+          <Text style={styles.link}>
+            Back
+          </Text>
+        </TouchableOpacity>
+      </View>
+
         <View style={styles.header}>
           <TouchableOpacity
             onPress={() => this.signOut()}
@@ -115,9 +127,17 @@ module.exports = React.createClass({
             {this.state.displayName}
           </Text>
         </View>
+
+      <CardSection>
+        <Button>
+        Click on a topic below to comment
+        </Button>
+      </CardSection>
+
         <View style={styles.body}>
+
           <TextInput
-            placeholder='Something on your mind?'
+            placeholder='Start a new thread here'
             style={styles.input}
             onChangeText={(text) => this.setState({title: text})}
             onEndEditing={() => this.addTopic()}

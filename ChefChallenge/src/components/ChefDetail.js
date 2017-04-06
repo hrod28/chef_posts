@@ -1,9 +1,8 @@
 'use strict';
 import React from 'react';
 import { Text, View, Image, Linking } from 'react-native';
-import Card from './Card';
-import CardSection from './CardSection';
-import Button from './Button';
+import { Card, CardSection, Input, Button, Spinner, Header } from './common';
+
 
 const ChefDetail = ({ chef }) => {
   const { name, restaurant, photo_url, restaurant_url, paired_with, serving_location } = chef;

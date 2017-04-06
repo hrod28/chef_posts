@@ -1,29 +1,52 @@
 'use strict';
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet
+} from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import styles from '../styles';
 import { Card, CardSection, Input, Button, Spinner, Header } from './common';
 
 class LandingMenu extends Component {
+
+
+
   render() {
     return (
       <Card>
-      
+
         <View>
           <Header headerText="Home Menu" />
+          <TouchableOpacity
+            onPress={() => this.props.navigator.pop()}
+          >
+            <Text style={styles.link}>
+              Back
+            </Text>
+          </TouchableOpacity>
         </View>
 
+      <ScrollView>
         <CardSection>
-          <Button >
+
+
+          <Button onPress={() => this.props.navigator.push({name: 'topics'})}>
             Join Discussion
           </Button>
         </CardSection>
+
         <CardSection>
-          <Button >
+          <Button onPress={() => this.props.navigator.push({name: 'ChefList'})}>
             Discover Chefs
           </Button>
         </CardSection>
+
         <CardSection>
           <Button>
             Today's Menu
@@ -54,6 +77,7 @@ class LandingMenu extends Component {
             Special Thanks
           </Button>
         </CardSection>
+      </ScrollView>
       </Card>
     );
   }
