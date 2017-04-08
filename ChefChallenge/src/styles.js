@@ -1,7 +1,8 @@
+'use strict';
 import { StyleSheet } from 'react-native';
 
-const blue = '#90caf9';
-const navy = '#1a237e';
+const grey = '#6B6B6B';
+const green = '#E2E34B';
 const white = '#fff';
 const black = '#000';
 
@@ -10,10 +11,25 @@ module.exports = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 40,
-    backgroundColor: blue,
+    backgroundColor: grey,
+  },
+  container1: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 40,
+    backgroundColor: 'white',
   },
   input: {
-    backgroundColor: white,
+    backgroundColor: green,
+    height: 50,
+    borderColor: black,
+    borderWidth: 1,
+    borderRadius: 5,
+    margin: 2,
+    textAlign: 'center'
+  },
+  signInInput: {
+    backgroundColor: 'white',
     height: 50,
     borderColor: black,
     borderWidth: 1,
@@ -22,7 +38,7 @@ module.exports = StyleSheet.create({
     textAlign: 'center'
   },
   buttonContainer: {
-    backgroundColor: white,
+    backgroundColor: grey,
     justifyContent: 'center',
     height: 50,
     borderColor: black,
@@ -40,14 +56,14 @@ module.exports = StyleSheet.create({
     margin: 2
   },
   button: {
-    textAlign: 'center'
+    textAlign: 'center',
   },
   links: {
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
   link: {
-    color: navy
+    color: green
   },
   feedback: {
     textAlign: 'center'
@@ -56,7 +72,7 @@ module.exports = StyleSheet.create({
   //topics section
   flexContainer: {
     flex: 1,
-    backgroundColor: blue
+    backgroundColor: grey
   },
   header: {
     marginTop: 20,
@@ -71,7 +87,8 @@ module.exports = StyleSheet.create({
     paddingLeft: 20
   },
   title: {
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#E2E34B'
   },
 
   //list section
@@ -80,7 +97,7 @@ module.exports = StyleSheet.create({
   },
   row: {
     alignItems: 'center',
-    backgroundColor: white,
+    backgroundColor: green,
     borderColor: black,
     borderWidth: 1,
     borderRadius: 5,
@@ -102,6 +119,17 @@ module.exports = StyleSheet.create({
     fontSize: 14
   },
   comment: {
-    color: '#777'
+    color: black
+  },
+
+  imageStyle: {
+    height: 110,
+    flex: 1,
+    width: null
+  },
+  signInImageStyle: {
+    height: 110,
+    flex: 1,
+    width: null
   }
-})
+});

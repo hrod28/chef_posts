@@ -15,12 +15,12 @@ import { Card, CardSection, Input, Button, Spinner, Header } from './common';
 import ChefDetail from './ChefDetail';
 import styles from '../styles';
 
-class ChefList extends Component {
-  state = { chefs: [] };
+class SilentAuction extends Component {
+  state = { auction: [] };
 
   componentWillMount() {
     axios.get('https://cap-backend.herokuapp.com/api/chefs')
-         .then(response => this.setState({ chefs: response.data }));
+         .then(response => this.setState({ auction: response.data }));
   }
 
 
@@ -71,4 +71,4 @@ class ChefList extends Component {
   }
 }
 
-export default ChefList;
+export default SilentAuction;

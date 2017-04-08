@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 import {
   View,
@@ -66,6 +67,6 @@ module.exports = React.createClass({
           </TouchableOpacity>
         </View>
       </View>
-    )
+    );
   }
-})
+});

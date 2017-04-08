@@ -5,6 +5,7 @@ import {
   Text,
   TextInput,
   ListView,
+  Image,
   TouchableOpacity
 } from 'react-native';
 
@@ -103,16 +104,14 @@ module.exports = React.createClass({
 
   render() {
     return (
+
       <View style={styles.flexContainer}>
       <View>
-        <Header headerText="Post or Comment" />
-        <TouchableOpacity
-          onPress={() => this.props.navigator.pop()}
-        >
-          <Text style={styles.link}>
-            Back
-          </Text>
-        </TouchableOpacity>
+      <CardSection>
+        <Image
+          style={styles.imageStyle}
+          source={{ uri: 'https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/17814533_777769615722762_813215094853927895_o.jpg?oh=ebe117ab59dcf2781bf8488bfc421a53&oe=595CFB47' }} />
+      </CardSection>
       </View>
 
         <View style={styles.header}>
@@ -122,6 +121,13 @@ module.exports = React.createClass({
             <Text style={styles.link}>
               Sign out
             </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => this.props.navigator.pop()}
+          >
+          <Text style={styles.link}>
+          Back
+          </Text>
           </TouchableOpacity>
           <Text style={styles.title}>
             {this.state.displayName}
@@ -150,6 +156,7 @@ module.exports = React.createClass({
           />
         </View>
       </View>
+
     );
   }
 });
