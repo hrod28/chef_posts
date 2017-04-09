@@ -123,10 +123,10 @@ module.exports = React.createClass({
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-          onPress={() => this.props.navigator.pop()}
+          onPress={() => this.props.navigator.push({name: 'LandingMenu'})}
           >
           <Text style={styles.link}>
-          Back
+          Home
           </Text>
           </TouchableOpacity>
           <Text style={styles.title}>
@@ -136,14 +136,14 @@ module.exports = React.createClass({
 
       <CardSection>
         <Button>
-        Click on a topic below to comment
+        Click on a post below to comment
         </Button>
       </CardSection>
 
         <View style={styles.body}>
 
           <TextInput
-            placeholder='Start a new thread here'
+            placeholder='...or start a new thread here'
             style={styles.input}
             onChangeText={(text) => this.setState({title: text})}
             onEndEditing={() => this.addTopic()}

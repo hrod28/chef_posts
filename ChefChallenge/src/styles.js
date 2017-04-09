@@ -17,7 +17,7 @@ module.exports = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 40,
-    backgroundColor: 'white',
+    backgroundColor: grey,
   },
   input: {
     backgroundColor: green,
@@ -60,7 +60,8 @@ module.exports = StyleSheet.create({
   },
   links: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    padding: 10
   },
   link: {
     color: green
@@ -124,6 +125,7 @@ module.exports = StyleSheet.create({
 
   imageStyle: {
     height: 110,
+    borderWidth: 1,
     flex: 1,
     width: null
   },

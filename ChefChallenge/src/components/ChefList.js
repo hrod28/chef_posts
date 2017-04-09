@@ -45,7 +45,7 @@ class ChefList extends Component {
       </CardSection>
 
         <View>
-          <Header headerText="Participating Chefs" />
+          <Header headerText="This Year's Participating Chefs:" />
           <TouchableOpacity
             onPress={() => this.props.navigator.push({name: 'LandingMenu'})}
           >
@@ -57,7 +57,7 @@ class ChefList extends Component {
 
         <CardSection>
           <Button>
-            This Year's Participating Chefs:
+            scroll down for more info
           </Button>
         </CardSection>
 

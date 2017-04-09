@@ -7,6 +7,12 @@ import {
 
 import LandingMenu from './components/LandingMenu';
 import ChefList from './components/ChefList';
+import Map from './components/Map';
+import DishesList from './components/DishesList';
+import ScheduleList from './components/ScheduleList';
+import SilentAuction from './components/SilentAuction';
+import SpecialThanks from './components/SpecialThanks';
+import VoteForm from './components/VoteForm';
 import signIn from './components/auth/signIn';
 import signUp from './components/auth/signUp';
 import chooseName from './components/auth/chooseName';
@@ -20,9 +26,14 @@ const routes = {
   chooseName,
   forgotPassword,
   topics,
+  Map,
   topicDetail,
   LandingMenu,
-  ChefList
+  ChefList,
+  DishesList,
+  ScheduleList,
+  SilentAuction,
+  SpecialThanks,
 };
 
 module.exports = React.createClass({

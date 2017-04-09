@@ -5,7 +5,7 @@ import { Card, CardSection, Input, Button, Spinner, Header } from './common';
 
 
 const ChefDetail = ({ chef }) => {
-  const { name, restaurant, photo_url, restaurant_url, paired_with, serving_location } = chef;
+  const { name, restaurant, restaurant_logo, paired_logo, photo_url, restaurant_url, paired_with, serving_location } = chef;
   const {
     imagesStyle,
     thumnailStyle,
@@ -20,7 +20,7 @@ const ChefDetail = ({ chef }) => {
         <View style={thumbnailContainerStyle}>
           <Image
             style={thumnailStyle}
-            source={{ uri: photo_url}}
+            source={{ uri: restaurant_logo}}
           />
         </View>
         <View style={headerContentStyle}>
@@ -40,11 +40,11 @@ const ChefDetail = ({ chef }) => {
       <View style={thumbnailContainerStyle}>
       <Image
       style={thumnailStyle}
-      source={{ uri: photo_url}}
+      source={{ uri: paired_logo}}
       />
       </View>
       <View style={headerContentStyle}>
-      <Text style={headerTextStyle}>Paired With:</Text>
+      <Text>Paired With:</Text>
       <Text style={headerTextStyle}>{paired_with}</Text>
       </View>
       </CardSection>
@@ -53,11 +53,11 @@ const ChefDetail = ({ chef }) => {
       <View style={thumbnailContainerStyle}>
       <Image
       style={thumnailStyle}
-      source={{ uri: photo_url}}
+      source={{ uri: paired_logo}}
       />
       </View>
       <View style={headerContentStyle}>
-      <Text style={headerTextStyle}>Serving From:</Text>
+      <Text>Serving From:</Text>
       <Text style={headerTextStyle}>{serving_location}</Text>
       </View>
       </CardSection>
@@ -79,7 +79,8 @@ const styles = {
     backgroundColor: 'white'
   },
   headerTextStyle: {
-    fontWeight: '600'
+    fontWeight: '600',
+    fontSize: 25
   },
   thumnailStyle: {
     height: 50,

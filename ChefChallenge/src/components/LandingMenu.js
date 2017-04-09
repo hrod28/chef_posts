@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
+  Linking,
   ScrollView,
   TextInput,
   TouchableOpacity,
@@ -11,12 +12,22 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import {firebaseApp, topicsRef} from './auth/authentication';
 import styles from '../styles';
 import { Card, CardSection, Input, Button, Spinner, Header } from './common';
 
 class LandingMenu extends Component {
 
-
+  signOut() {
+    // sign out the user
+    firebaseApp.auth().signOut()
+      .then(() => {
+        // Sign out successful
+        this.props.navigator.popToTop();
+      }, (error) => {
+        console.log(error);
+      });
+  }
 
   render() {
     return (
@@ -29,14 +40,25 @@ class LandingMenu extends Component {
       </CardSection>
 
         <View>
+
+
           <Header headerText="Home Menu" />
           <TouchableOpacity
-            onPress={() => this.props.navigator.pop()}
+          onPress={() => this.signOut()}
           >
-            <Text style={styles.link}>
-              Back
-            </Text>
+          <Text style={styles.link}>
+          Sign out
+          </Text>
           </TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => this.signOut()}
+          >
+          <Text style={styles.link}>
+
+          </Text>
+          </TouchableOpacity>
+
+
         </View>
 
       <ScrollView>
@@ -55,32 +77,37 @@ class LandingMenu extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>
+          <Button onPress={() => this.props.navigator.push({name: 'DishesList'})}>
             Today's Menu
           </Button>
         </CardSection>
         <CardSection>
-          <Button>
+          <Button onPress={() => this.props.navigator.push({name: 'ScheduleList'})}>
             Event Schedule
           </Button>
         </CardSection>
         <CardSection>
-          <Button>
+          <Button onPress={() => this.props.navigator.push({name: 'Map'})}>
             Event Map
           </Button>
         </CardSection>
         <CardSection>
-          <Button>
+          <Button onPress={() => this.props.navigator.push({name: 'VoteForm'})}>
             Cast Your Vote!
           </Button>
         </CardSection>
         <CardSection>
-          <Button>
+          <Button onPress={() => this.props.navigator.push({name: 'SilentAuction'})}>
             Silent Auction Sneak Peek
           </Button>
         </CardSection>
         <CardSection>
-          <Button>
+          <Button onPress={() => Linking.openURL('https://www.coloradogives.org/index.php?section=organizations&action=newDonation&fwID=27589')}>
+            Click Here to Donate
+          </Button>
+        </CardSection>
+        <CardSection>
+          <Button onPress={() => this.props.navigator.push({name: 'SpecialThanks'})}>
             Special Thanks
           </Button>
         </CardSection>
@@ -95,13 +122,8 @@ class LandingMenu extends Component {
           </Button>
         </CardSection>
         <CardSection>
-          <Button>
-            Special Thanks
-          </Button>
-        </CardSection>
-        <CardSection>
-          <Button>
-            Special Thanks
+          <Button onPress={() => Linking.openURL('https://www.coloradogives.org/index.php?section=organizations&action=newDonation&fwID=27589')}>
+            Click Here to Donate
           </Button>
         </CardSection>
       </ScrollView>
