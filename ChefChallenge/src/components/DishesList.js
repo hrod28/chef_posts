@@ -55,11 +55,7 @@ class DishesList extends Component {
           </TouchableOpacity>
         </View>
 
-        <CardSection>
-          <Button>
-            scroll down for more info
-          </Button>
-        </CardSection>
+      
 
       <ScrollView>
         {this.renderDishes()}
