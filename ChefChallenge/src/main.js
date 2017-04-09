@@ -30,6 +30,7 @@ const routes = {
   topicDetail,
   LandingMenu,
   ChefList,
+  VoteForm,
   DishesList,
   ScheduleList,
   SilentAuction,

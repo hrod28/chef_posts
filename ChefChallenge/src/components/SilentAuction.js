@@ -12,21 +12,21 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import { Card, CardSection, Input, Button, Spinner, Header } from './common';
-import ChefDetail from './ChefDetail';
+import SilentAuctionDetail from './SilentAuctionDetail';
 import styles from '../styles';
 
 class SilentAuction extends Component {
-  state = { auction: [] };
+  state = { auctions: [] };
 
   componentWillMount() {
-    axios.get('https://cap-backend.herokuapp.com/api/chefs')
-         .then(response => this.setState({ auction: response.data }));
+    axios.get('https://cap-backend.herokuapp.com/api/posts')
+         .then(response => this.setState({ auctions: response.data }));
   }
 
 
-  renderChefs() {
-    return this.state.chefs.map(chef =>
-      <ChefDetail key={chef.name} chef={chef} />
+  renderAuctions() {
+    return this.state.auctions.map(auction =>
+      <SilentAuctionDetail key={auction.title} auction={auction} />
     );
   }
 
@@ -45,7 +45,7 @@ class SilentAuction extends Component {
       </CardSection>
 
         <View>
-          <Header headerText="Participating Chefs" />
+          <Header headerText="Sneak Peek" />
           <TouchableOpacity
             onPress={() => this.props.navigator.push({name: 'LandingMenu'})}
           >
@@ -57,12 +57,12 @@ class SilentAuction extends Component {
 
         <CardSection>
           <Button>
-            This Year's Participating Chefs:
+            scroll down for more info
           </Button>
         </CardSection>
 
       <ScrollView>
-        {this.renderChefs()}
+        {this.renderAuctions()}
       </ScrollView>
 
       </Card>
