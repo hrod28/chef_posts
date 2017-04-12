@@ -51,8 +51,8 @@ handleSubmit() {
   // };
 
 
-  axios.post('http://localhost:3000/api/users', {
-    first_name: this.setState.first_name,
+  axios.post('https://cap-backend.herokuapp.com/api/users', {
+    first_name: this.state.first_name,
     last_name:this.state.last_name,
     username: this.state.username,
     password: this.state.password,
@@ -69,6 +69,8 @@ handleSubmit() {
       console.log('this');
         console.log(response);
     });
+    this.props.navigator.push({name: 'VoteValidation'});
+
   },
 
   render() {

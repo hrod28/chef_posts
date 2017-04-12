@@ -6,6 +6,7 @@ import {
 
 
 import LandingMenu from './components/LandingMenu';
+import VoteValidation from './components/VoteValidation';
 import ChefList from './components/ChefList';
 import VoteForm from './components/VoteForm';
 import Map from './components/Map';
@@ -31,6 +32,7 @@ const routes = {
   LandingMenu,
   ChefList,
   VoteForm,
+  VoteValidation,
   DishesList,
   ScheduleList,
   SilentAuction,
