@@ -50,7 +50,7 @@ class SilentAuction extends Component {
             onPress={() => this.props.navigator.push({name: 'LandingMenu'})}
           >
             <Text style={styles.link}>
-              Back
+              Home
             </Text>
           </TouchableOpacity>
         </View>
